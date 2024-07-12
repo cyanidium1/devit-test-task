@@ -62,7 +62,7 @@ export default function Home() {
                 min="0"
                 max="100"
                 value={concurrency}
-                onChange={e => setConcurrency(e.target.value + 1)}
+                onChange={e => setConcurrency(e.target.value)}
                 required
             />
             <button onClick={startRequests} disabled={isDisabled}>Start</button>
