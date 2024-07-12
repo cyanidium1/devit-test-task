@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 
 export default function Home() {
-    const [concurrency, setConcurrency] = useState(0);
+    const [concurrency, setConcurrency] = useState(1);
     const [isDisabled, setIsDisabled] = useState(false);
     const [results, setResults] = useState([]);
 
@@ -59,10 +59,10 @@ export default function Home() {
         <div>
             <input
                 type="number"
-                min="1"
+                min="0"
                 max="100"
                 value={concurrency}
-                onChange={e => setConcurrency(e.target.value)}
+                onChange={e => setConcurrency(e.target.value + 1)}
                 required
             />
             <button onClick={startRequests} disabled={isDisabled}>Start</button>
